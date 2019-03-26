@@ -7,7 +7,7 @@ install:
 - pip install mypy mypy-extensions
 - pip install --upgrade .
 script:
-- pycodestyle --show-source src
-- mypy src --ignore-missing-imports
+- pycodestyle --show-source fluffycow
+- mypy fluffycow --ignore-missing-imports
 notifications:
   email: false
