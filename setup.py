@@ -13,7 +13,7 @@ setup(
     version=VERSION,
     python_requires='>=3.5',
     description='A domain-specific language for generating random inputs',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     author='Chris Timperley',
     author_email='ctimperley@cmu.edu',
     url='https://github.com/ChrisTimperley/fluffycow',
