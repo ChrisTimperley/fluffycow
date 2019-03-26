@@ -5,10 +5,13 @@ __all__ = (
     'choice',
     'list',
     'random',
+    'randint',
+    'object',
     'uniform',
     'gauss')
 
-from typing import Iterator, TypeVar, Callable, Collection, List, Union
+from typing import (Iterator, TypeVar, Callable, Collection, List, Union,
+                    Type, Any)
 import functools
 import random as _random
 
@@ -58,3 +61,14 @@ def uniform(a: float, b: float) -> Iterator[float]:
 
 def gauss(mu: float, sigma: float) -> Iterator[float]:
     return call(functools.partial(_random.gauss, mu, sigma))
+
+
+def object(cls: Type[T],
+           *args_generators: Iterator[Any],
+           **kwargs_generators: Iterator[Any]
+           ) -> Iterator[T]:
+    """Generates random objects belonging to a given class."""
+    while True:
+        args = [next(g) for g in args_generators]
+        kwargs = {n: next(g) for (n, g) in kwargs_generators.items()}
+        yield cls(*args, **kwargs)  # type: ignore
