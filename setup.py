@@ -3,7 +3,7 @@
 import os
 from setuptools import setup
 
-PACKAGE_NAME = 'fluffcow'
+PACKAGE_NAME = 'fluffycow'
 VERSION = '0.0.1'
 REQUIRES = open('requirements.txt').readlines()
 
