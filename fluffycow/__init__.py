@@ -66,7 +66,7 @@ def gauss(mu: float, sigma: float) -> Iterator[float]:
 def object(cls: Type[T],
            *args_generators: Iterator[Any],
            **kwargs_generators: Iterator[Any]
-           ) -> T:
+           ) -> Iterator[T]:
     """Generates random objects belonging to a given class."""
     while True:
         args = [next(g) for g in args_generators]
