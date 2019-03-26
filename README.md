@@ -1,5 +1,7 @@
 # fluffycow
 
+[![Build Status](https://travis-ci.org/ChrisTimperley/fluffycow.svg?branch=master)](https://travis-ci.org/ChrisTimperley/fluffycow)
+
 A blackbox fuzzing toolkit for containerised ROS apps
 
 ![fluffycow](https://static.boredpanda.com/blog/wp-content/uploads/2014/03/cute-fluffy-animals-33.jpg)
