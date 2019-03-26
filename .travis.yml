@@ -10,3 +10,11 @@ script:
 - mypy fluffycow --ignore-missing-imports
 notifications:
   email: false
+deploy:
+  - provider: pypi
+    user: ChrisTimperley
+    password:
+      secure: eERAU4qyM7fpT7MObB4/2+XrlezenADdr06NC3iqHVLMC1RQ8qqgFZ5E8C1FCrzcECCzvHLAXTKRRsgrTLPxZZaIV4JiD36Q2LaAd3LjdSQuDEa3YtHE/R65FGkR1kziNjvLM2pLzgiBMEZ7IGuuwgZ4pqsRyNYLelTxR0H7Vb9iYPci2e9ZwQR4E5U0Ot5cbjvyS/SBeygoaD0V73lFxfI0JgYQgdUZZ5NcUR2GdMnMp4IJbvdiiJ2EMdw+79Gj0OOqADhisFME/fb/RNp53Lj6lssjL0MNmRBDzu6ptEgLuqY6vwby/j4/ArGZh7kC1pI8WUThLTRRYOGhPQrLpsKuGjcVkbg8RIJPwta517VaEnlevP4NZQQApphzaK6Fh6VNqp6HMQ2seattqUc4P9XtKictqzio5Xoy7gclbNOumVzaS+pkOmgpTF9zVl2uIp9VqJir7g+UtoS8fHWOukZYTdfMslGzsvy6XJjIboLM+sCZ11A94TMausUYsKKNPdbzNvIArCab9VAoOj9NCq4pVTJ0/wYqv3AazUuTEN6mZpBBBYMrYKimtrcrIsGnjMwEQnMA2mUf/SNCh3xVelexiO2JnNslMG5H0BidA9MZ/laq2ef7p8chloBkcnmx16PoUFFDxD6d+DcT9NkGtuTLHeSspqu2KSx4+XdhuSw=
+    on:
+      tags: true
+      python: '3.6'
