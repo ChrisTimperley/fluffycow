@@ -21,7 +21,7 @@ def call(f: Callable[[], T]) -> Iterator[T]:
         yield f()
 
 
-def constant(v: T) -> T:
+def constant(v: T) -> Iterator[T]:
     """Always returns a constant value."""
     while True:
         yield v
