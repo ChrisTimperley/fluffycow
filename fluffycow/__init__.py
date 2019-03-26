@@ -71,4 +71,4 @@ def object(cls: Type[T],
     while True:
         args = [next(g) for g in args_generators]
         kwargs = {n: next(g) for (n, g) in kwargs_generators.items()}
-        yield cls(*args, **kwargs)
+        yield cls(*args, **kwargs)  # type: ignore
