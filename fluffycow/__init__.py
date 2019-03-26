@@ -40,7 +40,9 @@ def list(g: Iterator[T], size: Iterator[int]) -> Iterator[List[T]]:
         yield [next(g) for i in range(sz)]
 
 
-random: Callable[[], Iterator[float]] = call(_random.random)
+def random() -> Iterator[float]:
+    """Samples a random floating point number in the range [0.0, 1.0)."""
+    return call(_random.random)
 
 
 def uniform(a: float, b: float) -> Iterator[float]:
