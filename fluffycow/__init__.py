@@ -8,7 +8,7 @@ __all__ = (
     'uniform',
     'gauss')
 
-from typing import Iterator, TypeVar, Callable, Collection, List
+from typing import Iterator, TypeVar, Callable, Collection, List, Union
 import functools
 import random as _random
 
@@ -33,8 +33,10 @@ def choice(opts: Collection[T]) -> Iterator[T]:
     return call(functools.partial(_random.choice, opts))
 
 
-def list(g: Iterator[T], size: Iterator[int]) -> Iterator[List[T]]:
+def list(g: Iterator[T], size: Union[int, Iterator[int]]) -> Iterator[List[T]]:
     """Generates a list of a sampled size using an item generator."""
+    if isinstance(size, int):
+        size = constant(size)
     while True:
         sz = next(size)
         yield [next(g) for i in range(sz)]
