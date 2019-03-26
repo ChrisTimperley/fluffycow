@@ -1,0 +1,13 @@
+language: python
+python:
+- '3.5'
+- '3.6'
+install:
+- pip install pycodestyle
+- pip install mypy mypy-extensions
+- pip install --upgrade .
+script:
+- pycodestyle --show-source src
+- mypy src --ignore-missing-imports
+notifications:
+  email: false
