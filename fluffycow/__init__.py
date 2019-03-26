@@ -12,30 +12,28 @@ from typing import Iterator, TypeVar, Callable, Collection, List
 import functools
 import random as _random
 
+T = TypeVar('T')
 
-K = TypeVar('K')
-def call(f: Callable[[], K]) -> Iterator[K]:
+
+def call(f: Callable[[], T]) -> Iterator[T]:
     """Calls a function at each iteration to generate a value."""
     while True:
         yield f()
 
 
-K = TypeVar('K')
-def constant(v: K) -> K:
+def constant(v: T) -> T:
     """Always returns a constant value."""
     while True:
         yield v
 
 
-K = TypeVar('K')
-def choice(opts: Collection[K]) -> Iterator[K]:
+def choice(opts: Collection[T]) -> Iterator[T]:
     """Selects an item from a set of options."""
     assert opts, "at least one option must be provided."
     return call(functools.partial(_random.choice, opts))
 
 
-K = TypeVar('K')
-def list(g: Iterator[K], size: Iterator[int]) -> Iterator[List[K]]:
+def list(g: Iterator[T], size: Iterator[int]) -> Iterator[List[T]]:
     """Generates a list of a sampled size using an item generator."""
     while True:
         sz = next(size)
