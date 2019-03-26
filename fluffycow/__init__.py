@@ -47,6 +47,11 @@ def random() -> Iterator[float]:
     return call(_random.random)
 
 
+def randint(a: int, b: int) -> Iterator[int]:
+    """Returns a random integer N such that a <= N <= b."""
+    return call(functools.partial(_random.randint, a, b))
+
+
 def uniform(a: float, b: float) -> Iterator[float]:
     return call(functools.partial(_random.uniform, a, b))
 
