@@ -4,7 +4,7 @@
 [![PyPI version](https://badge.fury.io/py/fluffycow.svg)](https://badge.fury.io/py/fluffycow)
 [![Python versions](https://img.shields.io/pypi/pyversions/fluffycow.svg)](https://pypi.org/project/fluffycow)
 
-A blackbox fuzzing toolkit for containerised ROS apps
+A simple and elegant library for generating complex random objects in Python.
 
 ![fluffycow](https://static.boredpanda.com/blog/wp-content/uploads/2014/03/cute-fluffy-animals-33.jpg)
 
