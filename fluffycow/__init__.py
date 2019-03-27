@@ -4,6 +4,7 @@ __all__ = (
     'constant',
     'choice',
     'list',
+    'mux',
     'random',
     'randint',
     'object',
