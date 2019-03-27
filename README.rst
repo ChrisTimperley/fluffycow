@@ -80,17 +80,17 @@ To generate 5 random cows 🐄:
       fluffiness = attr.ib(type=float)
 
    # provide generators for each keyword argument,
-   gen = g.object(Cow,
-                  age=g.randint(0, 50),
-                  fluffiness=g.gauss(5.0, 1.5))
+   gen = g.factory(Cow,
+                   age=g.randint(0, 50),
+                   fluffiness=g.gauss(5.0, 1.5))
 
    # or for each positional argument,
-   gen = g.object(Cow, g.randint(0, 50), g.gauss(5.0, 1.5))
+   gen = g.factory(Cow, g.randint(0, 50), g.gauss(5.0, 1.5))
 
    # or mix positional and keyword arguments
-   gen = g.object(Cow,
-                  g.randint(0, 50),
-                  fluffiness=g.gauss(5.0, 1.5))
+   gen = g.factory(Cow,
+                   g.randint(0, 50),
+                   fluffiness=g.gauss(5.0, 1.5))
 
    # generate some fluffy cows
    for i in range(5):
@@ -124,7 +124,7 @@ To generate a farm containing a random mixture of 10 animals:
       fluffiness = attr.ib(type=float)
 
    def farm():
-       cows = g.object(Cow,
+       cows = g.factory(Cow,
                 age=g.randint(0, 30),
                 fluffiness=g.gauss(5.0, 1.5))
        chickens = g.object(Chicken, g.randint(0, 10))

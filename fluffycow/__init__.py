@@ -72,10 +72,10 @@ def gauss(mu: float, sigma: float) -> Iterator[float]:
     return call(functools.partial(_random.gauss, mu, sigma))
 
 
-def object(cls: Type[T],
-           *args_generators: Iterator[Any],
-           **kwargs_generators: Iterator[Any]
-           ) -> Iterator[T]:
+def factory(cls: Type[T],
+            *args_generators: Iterator[Any],
+            **kwargs_generators: Iterator[Any]
+            ) -> Iterator[T]:
     """Generates random objects belonging to a given class."""
     while True:
         args = [next(g) for g in args_generators]
