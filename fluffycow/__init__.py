@@ -36,6 +36,14 @@ def choice(opts: Collection[T]) -> Iterator[T]:
     return call(functools.partial(_random.choice, opts))
 
 
+def mux(*generators: Iterator[Any]) -> Iterator[Any]:
+    """Generates an input using a randomly selected generator."""
+    assert generators, "must be provided at least one generator"
+    while True:
+        gen = _random.choice(generators)
+        yield next(gen)
+
+
 def list(g: Iterator[T], size: Union[int, Iterator[int]]) -> Iterator[List[T]]:
     """Generates a list of a sampled size using an item generator."""
     if isinstance(size, int):

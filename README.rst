@@ -104,3 +104,46 @@ To generate 5 random cows 🐄:
    Cow(age=40, fluffiness=4.274460173984223)
    Cow(age=8, fluffiness=4.26886806010291)
    """
+
+
+To generate a farm containing a random mixture of 10 animals:
+
+.. code:: python
+
+   @attr.s
+   class Cow:
+      age = attr.ib(type=int)
+      fluffiness = attr.ib(type=float)
+
+   @attr.s
+   class Chicken:
+       sass = attr.ib(type=int)
+
+   @attr.s
+   class Sheep:
+      fluffiness = attr.ib(type=float)
+
+   def farm():
+       cows = g.object(Cow,
+                age=g.randint(0, 30),
+                fluffiness=g.gauss(5.0, 1.5))
+       chickens = g.object(Chicken, g.randint(0, 10))
+       sheep = g.object(Sheep, g.gauss(4.5, 1.0))
+
+       animals = g.mux(cows, chickens, sheep)
+       for i in range(10):
+           animal = next(animals)
+           print(animal)
+
+   """
+   Cow(age=15, fluffiness=4.13522619329628)
+   Cow(age=6, fluffiness=6.132266751335851)
+   Sheep(fluffiness=4.996947740687185)
+   Cow(age=25, fluffiness=4.268442712380023)
+   Sheep(fluffiness=4.92952572321737)
+   Chicken(sass=5)
+   Cow(age=28, fluffiness=5.155204522890905)
+   Sheep(fluffiness=3.9241924681246094)
+   Sheep(fluffiness=3.676097181435127)
+   Sheep(fluffiness=2.713429568549102)
+   """
