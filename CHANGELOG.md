@@ -1,3 +1,9 @@
+## 0.0.4 (2019-03-28)
+
+* bug fix: `install_requires` in setup.py is now manually specified to avoid
+  issues when trying to install from PyPI.
+
+
 ## 0.0.3 (2019-03-26)
 
 * added `mux` operator: yields a single item from a set of generators by choosing and using a generator at random.
