@@ -4,7 +4,7 @@ import os
 from setuptools import setup
 
 PACKAGE_NAME = 'fluffycow'
-VERSION = '0.0.3'
+VERSION = '0.0.5'
 
 
 setup(
@@ -17,7 +17,7 @@ setup(
     author_email='ctimperley@cmu.edu',
     url='https://github.com/ChrisTimperley/fluffycow',
     license='Apache License 2.0',
-    install_requires=REQUIRES,
+    install_requires=['typing-extensions>=3.7.2'],
     packages=['fluffycow'],
     keywords=['random', 'fuzzing', 'dsl'],
     classifiers=[
