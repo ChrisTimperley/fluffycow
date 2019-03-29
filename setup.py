@@ -5,7 +5,6 @@ from setuptools import setup
 
 PACKAGE_NAME = 'fluffycow'
 VERSION = '0.0.3'
-REQUIRES = open('requirements.txt').readlines()
 
 
 setup(
