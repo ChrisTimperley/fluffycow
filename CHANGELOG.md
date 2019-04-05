@@ -1,3 +1,9 @@
+## 0.0.5 (2019-04-05)
+
+* bug fix: removed redundant `REQUIRES` var from `setup.py`, preventing a
+  FileNotFound error during install from PyPI.
+
+
 ## 0.0.4 (2019-03-28)
 
 * bug fix: `install_requires` in setup.py is now manually specified to avoid
